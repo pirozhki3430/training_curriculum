@@ -2,7 +2,7 @@ class CalendarsController < ApplicationController
 
 
   def index
-    getWeek
+    get_week
     @plan = Plan.new
   end
 
@@ -17,7 +17,7 @@ class CalendarsController < ApplicationController
     params.require(:plan).permit(:date, :plan)
   end
 
-  def getWeek
+  def get_week
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
 
     @todays_date = Date.today
